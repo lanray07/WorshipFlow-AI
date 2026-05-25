@@ -1,0 +1,40 @@
+name: iOS Build
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build WorshipFlow AI
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Select Xcode
+        run: |
+          sudo xcode-select -s /Applications/Xcode.app
+          xcodebuild -version
+
+      - name: Resolve packages
+        run: |
+          xcodebuild \
+            -project WorshipFlowAI.xcodeproj \
+            -scheme WorshipFlowAI \
+            -resolvePackageDependencies
+
+      - name: Build for iOS Simulator
+        run: |
+          xcodebuild \
+            -project WorshipFlowAI.xcodeproj \
+            -scheme WorshipFlowAI \
+            -configuration Debug \
+            -destination "generic/platform=iOS Simulator" \
+            CODE_SIGNING_ALLOWED=NO \
+            build
+
