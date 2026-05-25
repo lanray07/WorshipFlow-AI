@@ -29,6 +29,8 @@ enum VolunteerRole: String, CaseIterable, Identifiable, Codable {
     case projection = "Projection"
     case livestream = "Livestream"
     case worshipLeader = "Worship Leader"
+
+    var id: String { rawValue }
 }
 
 enum SongCategory: String, CaseIterable, Identifiable, Codable {
