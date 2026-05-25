@@ -22,21 +22,6 @@ Add these in:
 | `APP_STORE_CONNECT_API_KEY_ID` | App Store Connect API key ID |
 | `APP_STORE_CONNECT_ISSUER_ID` | App Store Connect issuer ID |
 | `APP_STORE_CONNECT_API_PRIVATE_KEY` | Full contents of the `.p8` App Store Connect API key |
-| `BUILD_CERTIFICATE_BASE64` | Base64 encoded Apple Distribution `.p12` certificate |
-| `P12_PASSWORD` | Password for the `.p12` certificate |
-| `PROVISION_PROFILE_BASE64` | Base64 encoded App Store provisioning profile for `com.worshipflow.ai` |
-| `KEYCHAIN_PASSWORD` | Any strong temporary keychain password for CI |
-
-## Create Base64 Values
-
-On macOS:
-
-```sh
-base64 -i AppleDistribution.p12 | pbcopy
-base64 -i WorshipFlowAI_AppStore.mobileprovision | pbcopy
-```
-
-Paste each copied value into the matching GitHub secret.
 
 ## App Store Connect API Key
 
@@ -45,6 +30,8 @@ Create an API key in:
 `App Store Connect > Users and Access > Integrations > App Store Connect API`
 
 The key should have enough access to upload builds for WorshipFlow AI.
+
+The workflow uses Xcode automatic signing with `-allowProvisioningUpdates`, so manual `.p12` certificate and `.mobileprovision` secrets are not required.
 
 ## Notes
 
