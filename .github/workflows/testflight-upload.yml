@@ -1,6 +1,13 @@
 name: TestFlight Upload
 
 on:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/testflight-upload.yml"
+      - "WorshipFlowAI/**"
+      - "WorshipFlowAI.xcodeproj/**"
   workflow_dispatch:
     inputs:
       build_number:
@@ -164,15 +171,23 @@ jobs:
           APP_STORE_CONNECT_API_KEY_ID: ${{ secrets.APP_STORE_CONNECT_API_KEY_ID }}
           APP_STORE_CONNECT_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
         run: |
+          set -o pipefail
+
           IPA_PATH=$(find "$RUNNER_TEMP/export" -name "*.ipa" -print -quit)
           if [ -z "$IPA_PATH" ]; then
             echo "::error::No IPA file was exported."
             exit 1
           fi
 
+          UPLOAD_LOG="$RUNNER_TEMP/altool-upload.log"
           xcrun altool \
             --upload-app \
             --type ios \
             --file "$IPA_PATH" \
             --apiKey "$APP_STORE_CONNECT_API_KEY_ID" \
-            --apiIssuer "$APP_STORE_CONNECT_ISSUER_ID"
+            --apiIssuer "$APP_STORE_CONNECT_ISSUER_ID" 2>&1 | tee "$UPLOAD_LOG"
+
+          if grep -E "UPLOAD FAILED|Validation failed|Failed to upload package" "$UPLOAD_LOG"; then
+            echo "::error::App Store Connect upload failed validation."
+            exit 1
+          fi
