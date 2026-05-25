@@ -19,9 +19,9 @@ Add these in:
 | Secret | Value |
 | --- | --- |
 | `APPLE_TEAM_ID` | Apple Developer Team ID |
-| `ASC_KEY_ID` | App Store Connect API key ID |
-| `ASC_ISSUER_ID` | App Store Connect issuer ID |
-| `ASC_PRIVATE_KEY` | Full contents of the `.p8` App Store Connect API key |
+| `APP_STORE_CONNECT_API_KEY_ID` | App Store Connect API key ID |
+| `APP_STORE_CONNECT_ISSUER_ID` | App Store Connect issuer ID |
+| `APP_STORE_CONNECT_API_PRIVATE_KEY` | Full contents of the `.p8` App Store Connect API key |
 | `BUILD_CERTIFICATE_BASE64` | Base64 encoded Apple Distribution `.p12` certificate |
 | `P12_PASSWORD` | Password for the `.p12` certificate |
 | `PROVISION_PROFILE_BASE64` | Base64 encoded App Store provisioning profile for `com.worshipflow.ai` |
