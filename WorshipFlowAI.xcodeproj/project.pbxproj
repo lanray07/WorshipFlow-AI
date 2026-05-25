@@ -341,7 +341,7 @@
 				INFOPLIST_FILE = WorshipFlowAI/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks");
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.worshipflow.ai;
+				PRODUCT_BUNDLE_IDENTIFIER = com.worshipflowai.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -364,7 +364,7 @@
 				INFOPLIST_FILE = WorshipFlowAI/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks");
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.worshipflow.ai;
+				PRODUCT_BUNDLE_IDENTIFIER = com.worshipflowai.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
