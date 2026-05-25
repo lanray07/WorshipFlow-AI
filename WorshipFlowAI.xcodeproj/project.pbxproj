@@ -1,0 +1,401 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		100000000000000000000101 /* WorshipFlowAIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000201 /* WorshipFlowAIApp.swift */; };
+		100000000000000000000102 /* AppModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000202 /* AppModels.swift */; };
+		100000000000000000000103 /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000203 /* AppViewModel.swift */; };
+		100000000000000000000104 /* AIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000204 /* AIService.swift */; };
+		100000000000000000000105 /* SubscriptionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000205 /* SubscriptionService.swift */; };
+		100000000000000000000106 /* PDFExportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000206 /* PDFExportService.swift */; };
+		100000000000000000000107 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000207 /* NotificationService.swift */; };
+		100000000000000000000118 /* VoiceInputService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10000000000000000000021A /* VoiceInputService.swift */; };
+		100000000000000000000108 /* SyncEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000208 /* SyncEngine.swift */; };
+		100000000000000000000109 /* WidgetPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000209 /* WidgetPlaceholder.swift */; };
+		10000000000000000000010A /* WatchPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10000000000000000000020A /* WatchPlaceholder.swift */; };
+		10000000000000000000010B /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10000000000000000000020B /* DesignSystem.swift */; };
+		10000000000000000000010C /* CardsAndControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10000000000000000000020C /* CardsAndControls.swift */; };
+		100000000000000000000119 /* VoiceInputButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10000000000000000000021B /* VoiceInputButton.swift */; };
+		10000000000000000000010D /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10000000000000000000020D /* RootView.swift */; };
+		10000000000000000000010E /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10000000000000000000020E /* OnboardingView.swift */; };
+		10000000000000000000010F /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10000000000000000000020F /* DashboardView.swift */; };
+		100000000000000000000110 /* SetListBuilderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000210 /* SetListBuilderView.swift */; };
+		100000000000000000000111 /* SongLibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000211 /* SongLibraryView.swift */; };
+		100000000000000000000112 /* TransposerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000212 /* TransposerView.swift */; };
+		100000000000000000000113 /* LyricPrompterScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000213 /* LyricPrompterScreen.swift */; };
+		100000000000000000000114 /* SchedulerRehearsalViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000214 /* SchedulerRehearsalViews.swift */; };
+		100000000000000000000115 /* AnalyticsExportViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000215 /* AnalyticsExportViews.swift */; };
+		100000000000000000000116 /* PaywallSettingsViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000216 /* PaywallSettingsViews.swift */; };
+		100000000000000000000117 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000217 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		100000000000000000000201 /* WorshipFlowAIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorshipFlowAIApp.swift; sourceTree = "<group>"; };
+		100000000000000000000202 /* AppModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModels.swift; sourceTree = "<group>"; };
+		100000000000000000000203 /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
+		100000000000000000000204 /* AIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIService.swift; sourceTree = "<group>"; };
+		100000000000000000000205 /* SubscriptionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionService.swift; sourceTree = "<group>"; };
+		100000000000000000000206 /* PDFExportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFExportService.swift; sourceTree = "<group>"; };
+		100000000000000000000207 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		10000000000000000000021A /* VoiceInputService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceInputService.swift; sourceTree = "<group>"; };
+		100000000000000000000208 /* SyncEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncEngine.swift; sourceTree = "<group>"; };
+		100000000000000000000209 /* WidgetPlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetPlaceholder.swift; sourceTree = "<group>"; };
+		10000000000000000000020A /* WatchPlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchPlaceholder.swift; sourceTree = "<group>"; };
+		10000000000000000000020B /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
+		10000000000000000000020C /* CardsAndControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsAndControls.swift; sourceTree = "<group>"; };
+		10000000000000000000021B /* VoiceInputButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceInputButton.swift; sourceTree = "<group>"; };
+		10000000000000000000020D /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		10000000000000000000020E /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		10000000000000000000020F /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		100000000000000000000210 /* SetListBuilderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetListBuilderView.swift; sourceTree = "<group>"; };
+		100000000000000000000211 /* SongLibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongLibraryView.swift; sourceTree = "<group>"; };
+		100000000000000000000212 /* TransposerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransposerView.swift; sourceTree = "<group>"; };
+		100000000000000000000213 /* LyricPrompterScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyricPrompterScreen.swift; sourceTree = "<group>"; };
+		100000000000000000000214 /* SchedulerRehearsalViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulerRehearsalViews.swift; sourceTree = "<group>"; };
+		100000000000000000000215 /* AnalyticsExportViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsExportViews.swift; sourceTree = "<group>"; };
+		100000000000000000000216 /* PaywallSettingsViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallSettingsViews.swift; sourceTree = "<group>"; };
+		100000000000000000000217 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		100000000000000000000218 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		100000000000000000000219 /* WorshipFlowAI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorshipFlowAI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		100000000000000000000301 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		100000000000000000000401 = {
+			isa = PBXGroup;
+			children = (
+				100000000000000000000402 /* WorshipFlowAI */,
+				100000000000000000000403 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		100000000000000000000402 /* WorshipFlowAI */ = {
+			isa = PBXGroup;
+			children = (
+				100000000000000000000201 /* WorshipFlowAIApp.swift */,
+				100000000000000000000404 /* Models */,
+				100000000000000000000405 /* ViewModels */,
+				100000000000000000000406 /* Services */,
+				100000000000000000000407 /* Components */,
+				100000000000000000000408 /* Views */,
+				100000000000000000000409 /* SyncPlaceholder */,
+				10000000000000000000040A /* WidgetsPlaceholder */,
+				10000000000000000000040B /* WatchPlaceholder */,
+				10000000000000000000040C /* Resources */,
+			);
+			path = WorshipFlowAI;
+			sourceTree = "<group>";
+		};
+		100000000000000000000403 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				100000000000000000000219 /* WorshipFlowAI.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		100000000000000000000404 /* Models */ = {isa = PBXGroup; children = (100000000000000000000202 /* AppModels.swift */,); path = Models; sourceTree = "<group>"; };
+		100000000000000000000405 /* ViewModels */ = {isa = PBXGroup; children = (100000000000000000000203 /* AppViewModel.swift */,); path = ViewModels; sourceTree = "<group>"; };
+		100000000000000000000406 /* Services */ = {isa = PBXGroup; children = (100000000000000000000204 /* AIService.swift */, 100000000000000000000205 /* SubscriptionService.swift */, 100000000000000000000206 /* PDFExportService.swift */, 100000000000000000000207 /* NotificationService.swift */, 10000000000000000000021A /* VoiceInputService.swift */,); path = Services; sourceTree = "<group>"; };
+		100000000000000000000407 /* Components */ = {isa = PBXGroup; children = (10000000000000000000020B /* DesignSystem.swift */, 10000000000000000000020C /* CardsAndControls.swift */, 10000000000000000000021B /* VoiceInputButton.swift */,); path = Components; sourceTree = "<group>"; };
+		100000000000000000000408 /* Views */ = {isa = PBXGroup; children = (10000000000000000000020D /* RootView.swift */, 10000000000000000000020E /* OnboardingView.swift */, 10000000000000000000020F /* DashboardView.swift */, 100000000000000000000210 /* SetListBuilderView.swift */, 100000000000000000000211 /* SongLibraryView.swift */, 100000000000000000000212 /* TransposerView.swift */, 100000000000000000000213 /* LyricPrompterScreen.swift */, 100000000000000000000214 /* SchedulerRehearsalViews.swift */, 100000000000000000000215 /* AnalyticsExportViews.swift */, 100000000000000000000216 /* PaywallSettingsViews.swift */,); path = Views; sourceTree = "<group>"; };
+		100000000000000000000409 /* SyncPlaceholder */ = {isa = PBXGroup; children = (100000000000000000000208 /* SyncEngine.swift */,); path = SyncPlaceholder; sourceTree = "<group>"; };
+		10000000000000000000040A /* WidgetsPlaceholder */ = {isa = PBXGroup; children = (100000000000000000000209 /* WidgetPlaceholder.swift */,); path = WidgetsPlaceholder; sourceTree = "<group>"; };
+		10000000000000000000040B /* WatchPlaceholder */ = {isa = PBXGroup; children = (10000000000000000000020A /* WatchPlaceholder.swift */,); path = WatchPlaceholder; sourceTree = "<group>"; };
+		10000000000000000000040C /* Resources */ = {isa = PBXGroup; children = (100000000000000000000217 /* Assets.xcassets */, 100000000000000000000218 /* Info.plist */,); path = Resources; sourceTree = "<group>"; };
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		100000000000000000000501 /* WorshipFlowAI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 100000000000000000000801 /* Build configuration list for PBXNativeTarget "WorshipFlowAI" */;
+			buildPhases = (
+				100000000000000000000601 /* Sources */,
+				100000000000000000000301 /* Frameworks */,
+				100000000000000000000602 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WorshipFlowAI;
+			productName = WorshipFlowAI;
+			productReference = 100000000000000000000219 /* WorshipFlowAI.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		100000000000000000000701 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					100000000000000000000501 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+				};
+			};
+			buildConfigurationList = 100000000000000000000800 /* Build configuration list for PBXProject "WorshipFlowAI" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 100000000000000000000401;
+			productRefGroup = 100000000000000000000403 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				100000000000000000000501 /* WorshipFlowAI */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		100000000000000000000602 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				100000000000000000000117 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		100000000000000000000601 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				100000000000000000000101 /* WorshipFlowAIApp.swift in Sources */,
+				100000000000000000000102 /* AppModels.swift in Sources */,
+				100000000000000000000103 /* AppViewModel.swift in Sources */,
+				100000000000000000000104 /* AIService.swift in Sources */,
+				100000000000000000000105 /* SubscriptionService.swift in Sources */,
+				100000000000000000000106 /* PDFExportService.swift in Sources */,
+				100000000000000000000107 /* NotificationService.swift in Sources */,
+				100000000000000000000118 /* VoiceInputService.swift in Sources */,
+				100000000000000000000108 /* SyncEngine.swift in Sources */,
+				100000000000000000000109 /* WidgetPlaceholder.swift in Sources */,
+				10000000000000000000010A /* WatchPlaceholder.swift in Sources */,
+				10000000000000000000010B /* DesignSystem.swift in Sources */,
+				10000000000000000000010C /* CardsAndControls.swift in Sources */,
+				100000000000000000000119 /* VoiceInputButton.swift in Sources */,
+				10000000000000000000010D /* RootView.swift in Sources */,
+				10000000000000000000010E /* OnboardingView.swift in Sources */,
+				10000000000000000000010F /* DashboardView.swift in Sources */,
+				100000000000000000000110 /* SetListBuilderView.swift in Sources */,
+				100000000000000000000111 /* SongLibraryView.swift in Sources */,
+				100000000000000000000112 /* TransposerView.swift in Sources */,
+				100000000000000000000113 /* LyricPrompterScreen.swift in Sources */,
+				100000000000000000000114 /* SchedulerRehearsalViews.swift in Sources */,
+				100000000000000000000115 /* AnalyticsExportViews.swift in Sources */,
+				100000000000000000000116 /* PaywallSettingsViews.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		100000000000000000000901 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("DEBUG=1", "$(inherited)");
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		100000000000000000000902 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		100000000000000000000903 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = WorshipFlowAI/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks");
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.worshipflow.ai;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		100000000000000000000904 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = WorshipFlowAI/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks");
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.worshipflow.ai;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		100000000000000000000800 /* Build configuration list for PBXProject "WorshipFlowAI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				100000000000000000000901 /* Debug */,
+				100000000000000000000902 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		100000000000000000000801 /* Build configuration list for PBXNativeTarget "WorshipFlowAI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				100000000000000000000903 /* Debug */,
+				100000000000000000000904 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 100000000000000000000701 /* Project object */;
+}
