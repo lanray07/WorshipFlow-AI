@@ -1,5 +1,6 @@
 import SwiftData
 import SwiftUI
+import StoreKit
 
 struct PaywallView: View {
     @Environment(SubscriptionService.self) private var subscriptionService
@@ -10,12 +11,29 @@ struct PaywallView: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 18) {
                     SectionHeader(title: "WorshipFlow AI Pro", subtitle: "Unlock the complete worship team operating system")
-                    plan("Free", price: "£0", features: ["3 set lists/month", "Basic song library", "Limited scheduling", "WorshipFlow AI branding"])
-                    plan("Pro", price: "£9.99/mo or £79.99/yr", features: ["Unlimited set lists", "Lyric prompter", "Key transposer", "Volunteer scheduling", "PDF exports", "AI worship flow suggestions"])
-                    plan("Church Plan", price: "£29.99/mo", features: ["Multiple worship teams", "Advanced scheduling", "Team collaboration placeholder", "Admin controls placeholder", "Cloud sync placeholder"])
+
+                    freePlan
+
                     if subscriptionService.isLoading {
                         ProgressView("Loading StoreKit products...")
+                            .foregroundStyle(.white)
                     }
+
+                    if let message = subscriptionService.errorMessage {
+                        ErrorBanner(message: message)
+                    }
+
+                    if subscriptionService.products.isEmpty {
+                        ForEach(SubscriptionService.fallbackOffers) { offer in
+                            fallbackPlan(offer)
+                        }
+                    } else {
+                        ForEach(subscriptionService.products) { product in
+                            productPlan(product)
+                        }
+                    }
+
+                    restoreAndLegal
                 }
                 .padding()
             }
@@ -24,7 +42,63 @@ struct PaywallView: View {
         .task { await subscriptionService.loadProducts() }
     }
 
-    private func plan(_ title: String, price: String, features: [String]) -> some View {
+    private var freePlan: some View {
+        planShell(
+            title: "Free",
+            price: "GBP 0",
+            duration: "No subscription required",
+            features: ["3 set lists/month", "Basic song library", "Limited scheduling", "WorshipFlow AI branding"]
+        ) {
+            Text("Current starter plan")
+                .font(.callout.weight(.semibold))
+                .foregroundStyle(.white.opacity(0.7))
+        }
+    }
+
+    private func productPlan(_ product: Product) -> some View {
+        let offer = SubscriptionService.fallbackOffers.first { $0.id == product.id }
+
+        return planShell(
+            title: product.displayName,
+            price: product.displayPrice,
+            duration: offer?.duration ?? subscriptionDuration(for: product),
+            features: offer?.features ?? ["Unlock WorshipFlow AI premium planning tools"]
+        ) {
+            Button {
+                Task { await subscriptionService.purchase(product) }
+            } label: {
+                if subscriptionService.isPurchasingProductID == product.id {
+                    ProgressView()
+                        .tint(.black)
+                } else {
+                    Text("Subscribe")
+                }
+            }
+            .buttonStyle(.borderedProminent)
+            .tint(WFColor.gold)
+            .disabled(subscriptionService.isPurchasingProductID != nil)
+        }
+    }
+
+    private func fallbackPlan(_ offer: SubscriptionService.FallbackOffer) -> some View {
+        planShell(title: offer.title, price: offer.price, duration: offer.duration, features: offer.features) {
+            Button {
+                Task { await subscriptionService.loadProducts() }
+            } label: {
+                Text("Load Subscription")
+            }
+            .buttonStyle(.borderedProminent)
+            .tint(WFColor.gold)
+        }
+    }
+
+    private func planShell<CTA: View>(
+        title: String,
+        price: String,
+        duration: String,
+        features: [String],
+        @ViewBuilder cta: () -> CTA
+    ) -> some View {
         VStack(alignment: .leading, spacing: 12) {
             HStack {
                 Text(title)
@@ -35,15 +109,65 @@ struct PaywallView: View {
                     .font(.headline)
                     .foregroundStyle(WFColor.gold)
             }
+
+            Text(duration)
+                .font(.subheadline.weight(.medium))
+                .foregroundStyle(.white.opacity(0.72))
+
             ForEach(features, id: \.self) { feature in
                 Label(feature, systemImage: "checkmark.circle.fill")
                     .foregroundStyle(.white.opacity(0.78))
             }
-            Button("Choose \(title)") {}
-                .buttonStyle(.borderedProminent)
-                .tint(WFColor.gold)
+
+            cta()
         }
         .wfPanel()
+    }
+
+    private var restoreAndLegal: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            Button {
+                Task { await subscriptionService.restorePurchases() }
+            } label: {
+                Label("Restore Purchases", systemImage: "arrow.clockwise")
+            }
+            .buttonStyle(.bordered)
+            .tint(WFColor.softGold)
+
+            Text("Subscriptions renew automatically unless cancelled at least 24 hours before the end of the current period. Payment is charged to your Apple ID. You can manage or cancel subscriptions in your App Store account settings.")
+                .font(.footnote)
+                .foregroundStyle(.white.opacity(0.68))
+
+            HStack(spacing: 14) {
+                Link("Privacy Policy", destination: URL(string: "https://github.com/lanray07/WorshipFlow-AI/blob/main/PRIVACY.md")!)
+                Link("Terms of Use (EULA)", destination: URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/")!)
+            }
+            .font(.footnote.weight(.semibold))
+            .foregroundStyle(WFColor.gold)
+        }
+        .wfPanel()
+    }
+
+    private func subscriptionDuration(for product: Product) -> String {
+        guard let subscription = product.subscription else {
+            return "Auto-renewable subscription"
+        }
+
+        let unit: String
+        switch subscription.subscriptionPeriod.unit {
+        case .day:
+            unit = subscription.subscriptionPeriod.value == 1 ? "day" : "days"
+        case .week:
+            unit = subscription.subscriptionPeriod.value == 1 ? "week" : "weeks"
+        case .month:
+            unit = subscription.subscriptionPeriod.value == 1 ? "month" : "months"
+        case .year:
+            unit = subscription.subscriptionPeriod.value == 1 ? "year" : "years"
+        @unknown default:
+            unit = "period"
+        }
+
+        return "\(subscription.subscriptionPeriod.value) \(unit), auto-renewing"
     }
 }
 
@@ -67,8 +191,12 @@ struct SettingsView: View {
                 }
                 Section("Data") {
                     Label("Export data", systemImage: "square.and.arrow.up")
-                    Label("Privacy policy", systemImage: "lock.fill")
-                    Label("Terms of use", systemImage: "doc.text.fill")
+                    Link(destination: URL(string: "https://github.com/lanray07/WorshipFlow-AI/blob/main/PRIVACY.md")!) {
+                        Label("Privacy policy", systemImage: "lock.fill")
+                    }
+                    Link(destination: URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/")!) {
+                        Label("Terms of use", systemImage: "doc.text.fill")
+                    }
                     Button(role: .destructive) {
                         deleteAllData()
                     } label: {
