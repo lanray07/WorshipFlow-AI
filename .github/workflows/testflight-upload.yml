@@ -131,19 +131,22 @@ jobs:
 
           export API_KEY_PATH
           JWT=$(ruby "$RUNNER_TEMP/appstore_jwt.rb")
-          CSR_CONTENT=$(base64 < "$RUNNER_TEMP/apple_distribution.csr" | tr -d '\n')
 
-          cat > "$RUNNER_TEMP/certificate-request.json" <<EOF
-          {
-            "data": {
-              "type": "certificates",
-              "attributes": {
-                "certificateType": "IOS_DISTRIBUTION",
-                "csrContent": "$CSR_CONTENT"
+          python3 - \
+            "$RUNNER_TEMP/apple_distribution.csr" \
+            "$RUNNER_TEMP/certificate-request.json" <<'PY'
+          import json, pathlib, sys
+          request = {
+              "data": {
+                  "type": "certificates",
+                  "attributes": {
+                      "certificateType": "IOS_DISTRIBUTION",
+                      "csrContent": pathlib.Path(sys.argv[1]).read_text(),
+                  },
               }
-            }
           }
-          EOF
+          pathlib.Path(sys.argv[2]).write_text(json.dumps(request))
+          PY
 
           curl -sS \
             -X POST "https://api.appstoreconnect.apple.com/v1/certificates" \
